@@ -20,27 +20,29 @@ var runLevels = function (window) {
     // BEGIN EDITING YOUR CODE HERE
     
     function createSawBlade(x, y){
-      var hitZoneSize = 25;
-      var damageFromObstacle = 10;
+      // code to spawn the obstacle
+      var hitZoneSize = 25; // the area where Hallebot is suppose to be hit
+      var damageFromObstacle = 10; // how much health the obstacle takes away from hitting Hallebot
       var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
       sawBladeHitZone.x = x;
       sawBladeHitZone.y = y;
-      game.addGameItem(sawBladeHitZone);
-      var obstacleImage = draw.bitmap("img/sawblade.png");
+      game.addGameItem(sawBladeHitZone); // the area on the obstacle where Hallebot can be hit
+      var obstacleImage = draw.bitmap("img/sawblade.png"); // image of the obstacle
       sawBladeHitZone.addChild(obstacleImage);
       obstacleImage.x = -25;
       obstacleImage.y = -25;
-      sawBladeHitZone.rotationalVelocity = 10;
+      sawBladeHitZone.rotationalVelocity = 10; // makes the obstacle spin
     }
     
-    function createSpikeTrap(x, y){
-      var hitZoneSize = 25;
-      var damageFromObstacle = 10;
+    function createSpikeTrap(x, y){ 
+      // code to spawn the obstacle
+      var hitZoneSize = 25; // the area where Hallebot is suppose to be hit
+      var damageFromObstacle = 10; // how much health the obstacle takes away from hitting Hallebot
       var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
       sawBladeHitZone.x = x;
       sawBladeHitZone.y = y;
-      game.addGameItem(sawBladeHitZone);
-      var obstacleImage = draw.bitmap("img/SpikeTrap.png");
+      game.addGameItem(sawBladeHitZone); // the area on the obstacle where Hallebot can be hit
+      var obstacleImage = draw.bitmap("img/SpikeTrap.png"); // image of the obstacle
       sawBladeHitZone.addChild(obstacleImage);
       obstacleImage.x = -20;
       obstacleImage.y = -30;
@@ -49,13 +51,14 @@ var runLevels = function (window) {
     }
     
     function createSpikeTrap2(x, y){
-      var hitZoneSize = 25;
-      var damageFromObstacle = 10;
+      // code to spawn the obstacle
+      var hitZoneSize = 25; // the area where Hallebot is suppose to be hit
+      var damageFromObstacle = 10; // how much health the obstacle takes away from hitting Hallebot
       var sawBladeHitZone = game.createObstacle(hitZoneSize, damageFromObstacle);
       sawBladeHitZone.x = x;
       sawBladeHitZone.y = y;
-      game.addGameItem(sawBladeHitZone);
-      var obstacleImage = draw.bitmap("img/SpikeTrap.png");
+      game.addGameItem(sawBladeHitZone); // the area on the obstacle where Hallebot can be hit
+      var obstacleImage = draw.bitmap("img/SpikeTrap.png"); // image of the obstacle
       sawBladeHitZone.addChild(obstacleImage);
       obstacleImage.x = -20;
       obstacleImage.y = -30;
@@ -64,24 +67,25 @@ var runLevels = function (window) {
     }
 
     function createEnemy(x, y){
+      // code to spawn the enemy
       var enemy = game.createGameItem("enemy", 25); // causes damage to Hallebot
-      var redSquare = draw.bitmap("img/Goomba (1).png");
+      var redSquare = draw.bitmap("img/Goomba (1).png"); // image of the enemy showing what it looks like
       redSquare.x = -25;
       redSquare.y = -25;
       enemy.addChild(redSquare);
       enemy.x = x;
       enemy.y = y;
       game.addGameItem(enemy);
-      enemy.velocityX = -4;
+      enemy.velocityX = -4; // speed of the enemy on how fast or slow it runs
       enemy.rotationalVelocity = 0;
       redSquare.scaleX = 0.3;
       redSquare.scaleY = 0.3;
       enemy.onPlayerCollision = function(){
-        game.changeIntegrity(-10)
+        game.changeIntegrity(-10) // how much health Hallebot loses when hit
       };
 
       enemy.onProjectileCollision = function(){
-        game.increaseScore(2000);
+        game.increaseScore(2000); // gains points when shot by Hallebot
         enemy.fadeOut();
         // enemy.shrink()
         // enemy.flyTo(0, 0)
@@ -89,24 +93,25 @@ var runLevels = function (window) {
  }
 
  function createEnemy2(x, y){
-  var enemy = game.createGameItem("enemy", 25);
-  var redSquare = draw.bitmap("img/Spike.png");
+  // code to spawn the enemy
+  var enemy = game.createGameItem("enemy", 25); // causes damage to Hallebot
+  var redSquare = draw.bitmap("img/Spike.png"); // image of the enemy
   redSquare.x = -25;
   redSquare.y = -25;
   enemy.addChild(redSquare);
   enemy.x = x;
   enemy.y = y;
   game.addGameItem(enemy);
-  enemy.velocityX = -4;
+  enemy.velocityX = -4; // speed of the enemy
   enemy.rotationalVelocity = 0;
   redSquare.scaleX = 0.3;
   redSquare.scaleY = 0.3;
   enemy.onPlayerCollision = function(){
-    game.changeIntegrity(-10)
+    game.changeIntegrity(-10) // how much health Hallebot loses
   };
 
   enemy.onProjectileCollision = function(){
-    game.increaseScore(2000);
+    game.increaseScore(2000); // gains points when shot by Hallebot
     enemy.fadeOut();
     // enemy.shrink()
     // enemy.flyTo(0, 0)
@@ -114,24 +119,25 @@ var runLevels = function (window) {
 }
 
   function createEnemy3(x, y){
-    var enemy = game.createGameItem("enemy", 25);
-    var redSquare = draw.bitmap("img/KoopaTroopa (1).png");
+    // code to spawn the enemy
+    var enemy = game.createGameItem("enemy", 25); // causes damage to Hallebot
+    var redSquare = draw.bitmap("img/KoopaTroopa (1).png"); // image of the enemy
     redSquare.x = -25;
     redSquare.y = -25;
     enemy.addChild(redSquare);
     enemy.x = x;
     enemy.y = y;
     game.addGameItem(enemy);
-    enemy.velocityX = -4;
+    enemy.velocityX = -4; // speed of the enemy
     enemy.rotationalVelocity = 0;
     redSquare.scaleX = 0.3;
     redSquare.scaleY = 0.3;
     enemy.onPlayerCollision = function(){
-      game.changeIntegrity(-10)
+      game.changeIntegrity(-10) // how much health Hallebot loses
     };
     
     enemy.onProjectileCollision = function(){
-      game.increaseScore(2000);
+      game.increaseScore(2000); // gains points when shot by Hallebot
       enemy.fadeOut();
       // enemy.shrink()
       // enemy.flyTo(0, 0)
@@ -140,24 +146,25 @@ var runLevels = function (window) {
   }
 
   function createEnemy4(x, y){
-    var enemy = game.createGameItem("enemy", 25);
-    var redSquare = draw.bitmap("img/BulletBill.png");
+    // code to spawn the enemy
+    var enemy = game.createGameItem("enemy", 25); // causes damage to Hallebot
+    var redSquare = draw.bitmap("img/BulletBill.png"); // image of the enemy
     redSquare.x = -25;
     redSquare.y = -25;
     enemy.addChild(redSquare);
     enemy.x = x;
     enemy.y = y;
     game.addGameItem(enemy);
-    enemy.velocityX = -4;
+    enemy.velocityX = -4; // speed of the enemy
     enemy.rotationalVelocity = 0;
     redSquare.scaleX = 0.3;
     redSquare.scaleY = 0.3;
     enemy.onPlayerCollision = function(){
-      game.changeIntegrity(-10)
+      game.changeIntegrity(-10) // how much health Hallebot loses
     };
     
     enemy.onProjectileCollision = function(){
-      game.increaseScore(2000);
+      game.increaseScore(2000); // gains points when shot by Hallebot
       enemy.fadeOut();
       // enemy.shrink()
       // enemy.flyTo(0, 0)
@@ -166,24 +173,25 @@ var runLevels = function (window) {
   }
 
   function createEnemy5(x, y){
-    var enemy = game.createGameItem("enemy", 25);
-    var redSquare = draw.bitmap("img/Goomba (1).png");
+    // code to spawn the enemy
+    var enemy = game.createGameItem("enemy", 25); // causes damage to Hallebot
+    var redSquare = draw.bitmap("img/Goomba (1).png"); // image of the enemy
     redSquare.x = -25;
     redSquare.y = -25;
     enemy.addChild(redSquare);
     enemy.x = x;
     enemy.y = y;
     game.addGameItem(enemy);
-    enemy.velocityX = -4;
+    enemy.velocityX = -4; // speed of the enemy
     enemy.rotationalVelocity = 0;
     redSquare.scaleX = 0.3;
     redSquare.scaleY = 0.3;
     enemy.onPlayerCollision = function(){
-      game.changeIntegrity(-10)
+      game.changeIntegrity(-10) // how much health Hallebot loses
     };
     
     enemy.onProjectileCollision = function(){
-      game.increaseScore(2000);
+      game.increaseScore(2000); // gains points when shot by Hallebot
       enemy.fadeOut();
       // enemy.shrink()
       // enemy.flyTo(0, 0)
@@ -192,24 +200,25 @@ var runLevels = function (window) {
   }
 
   function createEnemy6(x, y){
-    var enemy = game.createGameItem("enemy", 25);
-    var redSquare = draw.bitmap("img/Spike.png");
+    // code to spawn the enemy
+    var enemy = game.createGameItem("enemy", 25); // causes damage to Hallebot
+    var redSquare = draw.bitmap("img/Spike.png"); // image of the enemy
     redSquare.x = -25;
     redSquare.y = -25;
     enemy.addChild(redSquare);
     enemy.x = x;
     enemy.y = y;
     game.addGameItem(enemy);
-    enemy.velocityX = -4;
+    enemy.velocityX = -4; // speed of the enemy
     enemy.rotationalVelocity = 0;
     redSquare.scaleX = 0.3;
     redSquare.scaleY = 0.3;
     enemy.onPlayerCollision = function(){
-      game.changeIntegrity(-10)
+      game.changeIntegrity(-10) // how much health Hallebot loses
     };
     
     enemy.onProjectileCollision = function(){
-      game.increaseScore(2000);
+      game.increaseScore(2000); // gains points when shot by Hallebot
       enemy.fadeOut();
       // enemy.shrink()
       // enemy.flyTo(0, 0)
@@ -218,24 +227,25 @@ var runLevels = function (window) {
   }
 
   function createEnemy7(x, y){
-    var enemy = game.createGameItem("enemy", 25);
-    var redSquare = draw.bitmap("img/KoopaTroopa (1).png");
+    // code to spawn the enemy
+    var enemy = game.createGameItem("enemy", 25); // causes damage to Hallebot
+    var redSquare = draw.bitmap("img/KoopaTroopa (1).png"); // image of the enemy
     redSquare.x = -25;
     redSquare.y = -25;
     enemy.addChild(redSquare);
     enemy.x = x;
     enemy.y = y;
     game.addGameItem(enemy);
-    enemy.velocityX = -4;
+    enemy.velocityX = -4; // speed of the enemy
     enemy.rotationalVelocity = 0;
     redSquare.scaleX = 0.3;
     redSquare.scaleY = 0.3;
     enemy.onPlayerCollision = function(){
-      game.changeIntegrity(-10)
+      game.changeIntegrity(-10) // how much health Hallebot loses
     };
     
     enemy.onProjectileCollision = function(){
-      game.increaseScore(2000);
+      game.increaseScore(2000); // gains points when shot by Hallebot
       enemy.fadeOut();
       // enemy.shrink()
       // enemy.flyTo(0, 0)
@@ -244,24 +254,25 @@ var runLevels = function (window) {
   }
 
   function createEnemy8(x, y){
-    var enemy = game.createGameItem("enemy", 25);
-    var redSquare = draw.bitmap("img/BulletBill.png");
+    // code to spawn the enemy
+    var enemy = game.createGameItem("enemy", 25); // causes damage to Hallebot
+    var redSquare = draw.bitmap("img/BulletBill.png"); // image of the enemy
     redSquare.x = -25;
     redSquare.y = -25;
     enemy.addChild(redSquare);
     enemy.x = x;
     enemy.y = y;
     game.addGameItem(enemy);
-    enemy.velocityX = -4;
+    enemy.velocityX = -4; // speed of the enemy
     enemy.rotationalVelocity = 0;
     redSquare.scaleX = 0.3;
     redSquare.scaleY = 0.3;
     enemy.onPlayerCollision = function(){
-      game.changeIntegrity(-10)
+      game.changeIntegrity(-10) // how much health Hallebot loses
     };
     
     enemy.onProjectileCollision = function(){
-      game.increaseScore(2000);
+      game.increaseScore(2000); // gains points when shot by Hallebot
       enemy.fadeOut();
       // enemy.shrink()
       // enemy.flyTo(0, 0)
@@ -269,22 +280,23 @@ var runLevels = function (window) {
     
   }
     function createReward(x, y){
-      var reward = game.createGameItem("enemy", 25); // gains points and health
-      var redSquare = draw.bitmap("img/PowerUp.png");
+      // code to spawn the reward
+      var reward = game.createGameItem("enemy", 25); 
+      var redSquare = draw.bitmap("img/PowerUp.png"); // image of the reward
       redSquare.x = -45;
       redSquare.y = -45;
       reward.addChild(redSquare);
       reward.x = x;
       reward.y = y;
       game.addGameItem(reward);
-      reward.velocityX = -4;
+      reward.velocityX = -4; // speed of the reward
       reward.rotationalVelocity = 0 ;
       redSquare.scaleX = 0.1;
       redSquare.scaleY = 0.1;
       reward.onPlayerCollision = function(){
-        game.changeIntegrity(+10)
+        game.changeIntegrity(+10) // gains health
         reward.fadeOut();
-        game.increaseScore(2000);
+        game.increaseScore(2000); // gains points
       };
 
       reward.onProjectileCollision = function(){
@@ -296,21 +308,22 @@ var runLevels = function (window) {
  }
 
  function createMarker(x, y){
-  var marker = game.createGameItem("marker", 25); // end of the level
-  var blueSquare = draw.bitmap("img/Pipe.png");
+  // code to spawn the marker
+  var marker = game.createGameItem("marker", 25); // marks the end of the level to the next level
+  var blueSquare = draw.bitmap("img/Pipe.png"); // image of the marker
   blueSquare.x = -40;
   blueSquare.y = -40;
   marker.addChild(blueSquare);
   marker.x = x;
   marker.y = y;
   game.addGameItem(marker);
-  marker.velocityX = -4;
+  marker.velocityX = -4; // speed of the marker
   marker.rotationalVelocity = 0;
   blueSquare.scaleX = 0.5;
   blueSquare.scaleY = 0.5;
   marker.onPlayerCollision = function() {
-    game.changeIntegrity(+10)
-    startLevel();
+    game.changeIntegrity(+10) // gains health
+    startLevel(); // starts the next level
     marker.fadeOut();
   };
  }
